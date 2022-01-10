@@ -1,10 +1,11 @@
 package com.practice.gfg.dp;
 
 /**
+ * 0/1 Knapsack Problem
  * https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
  */
 public class Knapsack {
-    static int knapSack(int w, int wt[], int val[]) {
+    static int knapSack(int w, int[] wt, int[] val) {
         int[][] value = new int[wt.length + 1][w + 1];
 
         for (int i = 0; i < value.length; i++) {
@@ -20,9 +21,9 @@ public class Knapsack {
             }
         }
 
-        for (int i = 0; i < value.length; i++) {
+        for (int[] ints : value) {
             for (int j = 0; j < value[0].length; j++) {
-                System.out.print(value[i][j] + "\t");
+                System.out.print(ints[j] + "\t");
             }
             System.out.println(" ");
         }
@@ -30,9 +31,9 @@ public class Knapsack {
     }
 
     public static void main(String[] args) {
-        int val[] = new int[] { 60, 100, 120 };
-        int wt[] = new int[] { 10, 20, 30 };
+        int[] val = new int[] { 60, 100, 120 };
+        int[] wt = new int[] { 10, 20, 30 };
         int w = 50;
-        System.out.println(knapSack(w, wt, val));;
+        System.out.println(knapSack(w, wt, val));
     }
 }
