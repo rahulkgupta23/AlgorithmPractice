@@ -40,16 +40,15 @@ public class PrintTargetSumSubset {
         while (!pairArrayDeque.isEmpty()) {
             Pair remaining = pairArrayDeque.removeFirst();
 
-            if (remaining.i == 0 && remaining.j == 0) {
+            if (remaining.i == 0 || remaining.j == 0) {
                 System.out.println(remaining.psf);
-                continue;
+            } else {
+                if ((remaining.j - arr[remaining.i - 1] >= 0) && targetSumExists[remaining.i - 1][remaining.j - arr[remaining.i - 1]])
+                    pairArrayDeque.add(new Pair(remaining.i - 1, remaining.j - arr[remaining.i - 1], arr[remaining.i - 1] + " " + remaining.psf));
+
+                if (targetSumExists[remaining.i - 1][remaining.j])
+                    pairArrayDeque.add(new Pair(remaining.i - 1, remaining.j, remaining.psf));
             }
-
-            if ((remaining.j - arr[remaining.i - 1] >= 0) && targetSumExists[remaining.i - 1][remaining.j - arr[remaining.i - 1]])
-                pairArrayDeque.add(new Pair(remaining.i - 1, remaining.j - arr[remaining.i - 1], arr[remaining.i - 1] + " " + remaining.psf));
-
-            if (targetSumExists[remaining.i - 1][remaining.j])
-                pairArrayDeque.add(new Pair(remaining.i - 1, remaining.j, remaining.psf));
         }
     }
 
