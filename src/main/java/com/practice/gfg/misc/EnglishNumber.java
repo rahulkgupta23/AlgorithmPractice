@@ -1,4 +1,4 @@
-package com.practice.gfg;
+package com.practice.gfg.misc;
 
 import java.util.HashMap;
 import java.util.Map;

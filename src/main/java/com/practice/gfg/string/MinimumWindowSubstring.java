@@ -1,6 +1,5 @@
-package com.practice.gfg;
+package com.practice.gfg.string;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MinimumWindowSubstring {
