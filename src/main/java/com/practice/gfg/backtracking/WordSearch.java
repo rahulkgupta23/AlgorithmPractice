@@ -1,5 +1,8 @@
 package com.practice.gfg.backtracking;
 
+/**
+ * https://leetcode.com/problems/word-search/
+ */
 public class WordSearch {
     public boolean exist(char[][] board, String word) {
         boolean[][] visited = new boolean[board.length][board[0].length];
@@ -51,10 +54,10 @@ public class WordSearch {
 
     public static void main(String[] args) {
         WordSearch wordSearch = new WordSearch();
-//        System.out.println(wordSearch.exist(new char[][] {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}}, "ABCCED"));
-//        System.out.println(wordSearch.exist(new char[][] {{'A','B'}}, "BA"));
-//        System.out.println(wordSearch.exist(new char[][] {{'A','A','A'}}, "AAAA"));
-//        System.out.println(wordSearch.exist(new char[][] {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}}, "SEE"));
+        System.out.println(wordSearch.exist(new char[][] {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}}, "ABCCED"));
+        System.out.println(wordSearch.exist(new char[][] {{'A','B'}}, "BA"));
+        System.out.println(wordSearch.exist(new char[][] {{'A','A','A'}}, "AAAA"));
+        System.out.println(wordSearch.exist(new char[][] {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}}, "SEE"));
         System.out.println(wordSearch.exist(new char[][] {
                 {'A','B','C','E'},
                 {'S','F','E','S'},
